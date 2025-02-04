@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .main-wrapper {
+            height: calc(100vh - 80px);
+            /* Adjusting for navbar height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container,
+        .portfolio-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            position: relative;
+        }
+
+        .container {
+            background-color: #333;
+            color: white;
+        }
+
+        .portfolio-section {
+            background-color: white;
+        }
+
+        .portfolio-section .info {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .portfolio-section .info h1 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .portfolio-section .info h3 {
+            font-size: 25px;
+            margin-top: 10px;
+        }
+
+        .image {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .image img {
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #4CAF50;
+            /* Green */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('skills') }}">Skills</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        <div class="container" id="home"></div>
+
+        <div class="portfolio-section">
+            <div class="info">
+                <h3>Hi! I'm Kundiri Krishna Bhavani</h3><br>
+                <h1>THIS IS MY PORTFOLIO.</h1>
+                <a href="/static/img/FinalResume.pdf">
+                    <button class="download-btn">Download Resume</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="/static/img/img.jpg" alt="Photo">
+        </div>
+    </div>
+
+</body>
+
+</html>

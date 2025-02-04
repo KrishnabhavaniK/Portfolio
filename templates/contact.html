@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact - Student Portfolio</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .main-wrapper {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section {
+            padding: 50px;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 40px;
+            border-radius: 5px;
+            max-width: 900px;
+        }
+
+        .contact-title {
+            background-color: #222;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #4CAF50;
+            /* Green */
+            transform: scale(1.05);
+        }
+        .footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            justify-content: space-between;
+        }
+
+        .footer a {
+            color: #3366cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('skills') }}">Skills</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-section">
+        <div class="contact-title">Contact Me</div>
+        <div class="form-container">
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <br><br>
+
+                <button class="contact-btn" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p><strong>Email:</strong><a href="kkrishnabhavani2005@gmail.com">kkrishnabhavani2005@gmail.com</a><strong>||Mobile No:</strong> 986-619-9842||<strong>GitHub: </strong><a href="https://github.com/KrishnabhavaniK">@KrishnabhavaniK</a></p>
+    </div>
+</body>
+
+</html>
